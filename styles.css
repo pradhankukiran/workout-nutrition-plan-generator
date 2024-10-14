@@ -1,0 +1,152 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.icon {
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.section {
+  background-color: rgba(45, 55, 72, 0.7);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #a0aec0;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(74, 85, 104, 0.2);
+  color: #fff;
+  border: 1px solid rgba(160, 174, 192, 0.3);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.submit-container {
+  text-align: center;
+}
+
+button {
+  background-color: #e53e3e;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(229, 62, 62, 0.3);
+}
+
+button:hover {
+  background-color: #c53030;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(229, 62, 62, 0.4);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.5);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section {
+    padding: 1.5rem;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add a subtle animation to form fields */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.field {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.field:nth-child(1) { animation-delay: 0.1s; }
+.field:nth-child(2) { animation-delay: 0.2s; }
+.field:nth-child(3) { animation-delay: 0.3s; }
+.field:nth-child(4) { animation-delay: 0.4s; }
+.field:nth-child(5) { animation-delay: 0.5s; }
