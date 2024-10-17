@@ -43,13 +43,12 @@ export async function generatePlan(data: PlanRequest, onUpdate: (section: string
 
 	const prompts = [
 		`1. Generate a section with the following elements:
-    Title:  "${data.timeFrame} PLAN" in a large, bold font.
-Subtitle:  "${data.name}" in a slightly smaller but still prominent font.`,
+    Title:  "${data.timeFrame} PLAN".
+Subtitle:  "${data.name}" `,
 		`2. Generate a section with the following elements:
     At the top, generate a catchy program name based on the ${data.fitnessGoal} (e.g., for weight loss, a name like "Shred & Burn" or "Lean Machine").
-    Leave space below the program name.
-    Center the text "${data.fitnessGoal}" in all caps and bold font to emphasize the main goal of the plan (e.g., WEIGHT LOSS, MUSCLE GAIN, etc.).
-    After another small space, center the text "${data.workoutDays} DAY SPLIT" to indicate the workout frequency.`,
+    Leave space below the program name. Then "${data.fitnessGoal}" to emphasize the main goal of the plan (e.g., WEIGHT LOSS, MUSCLE GAIN, etc.).
+    After another small space, the text "${data.workoutDays} DAY SPLIT" to indicate the workout frequency.`,
 		`3. Generate a structured section with the following elements:
 
     Profile Section:
