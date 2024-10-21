@@ -1,42 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppins', sans-serif;
+	@apply bg-gray-900 text-white;
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
 	@apply font-bold;
 }
 
-h1 {
-	@apply text-4xl mb-8;
-}
-
-h2 {
-	@apply text-2xl mb-4;
-}
-
+/* Add a subtle gradient background */
 .bg-gray-900 {
 	background: linear-gradient(to bottom right, #1a202c, #2d3748);
 }
 
+/* Add some depth to the form sections */
 .bg-gray-800 {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: transform 0.2s ease-in-out, opacity 0.5s ease-in-out;
+	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .bg-gray-800:hover {
 	transform: translateY(-2px);
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Style the submit button */
 button[type='submit'],
 button.bg-red-600 {
-	transition: all 0.2s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 button[type='submit']:hover,
@@ -45,6 +46,7 @@ button.bg-red-600:hover {
 	box-shadow: 0 4px 6px rgba(220, 38, 38, 0.2);
 }
 
+/* Add sliding animation for new sections */
 @keyframes slideInFromRight {
 	0% {
 		transform: translateX(100%);
@@ -58,4 +60,41 @@ button.bg-red-600:hover {
 
 .animate-slide-in {
 	animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #2d3748;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #4a5568;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #718096;
+}
+
+/* Focus styles */
+input:focus,
+select:focus,
+button:focus {
+	@apply outline-none ring-2 ring-red-500 ring-opacity-50;
+}
+
+/* Placeholder styles */
+::placeholder {
+	@apply text-gray-500;
+}
+
+/* Transition for all interactive elements */
+button,
+input,
+select {
+	@apply transition-all duration-300 ease-in-out;
 }

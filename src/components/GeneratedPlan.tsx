@@ -23,7 +23,7 @@ function GeneratedPlan() {
 			<div className='max-w-5xl mx-auto pt-10 px-6'>
 				<div className='flex justify-between items-center mb-8'>
 					<Link to='/' className='flex items-center text-[#dd293b] hover:text-[#f6f7f8] transition-colors duration-300'>
-						<ArrowLeft className='mr-2 w-6 h-6' />
+						<ArrowLeft className='mr-2 w-9 h-9' />
 						<span className='font-bold text-xl'>Back to Home</span>
 					</Link>
 				</div>

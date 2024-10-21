@@ -51,13 +51,13 @@ const QuestionnaireSection: React.FC<QuestionnaireSectionProps> = ({ title, icon
 
 		if (field === 'gender' || field === 'fitnessLevel' || field === 'fitnessGoal' || field === 'trainingType') {
 			return (
-				<div key={field} className='mb-4'>
-					<label className='block text-sm font-medium mb-1'>{label}</label>
+				<div key={field} className='mb-6'>
+					<label className='block text-sm font-medium mb-2 text-gray-300'>{label}</label>
 					<select
 						name={field}
 						value={userData[field] as string}
 						onChange={handleChange}
-						className='w-full bg-gray-700 text-white rounded px-3 py-2'
+						className='w-full bg-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300'
 					>
 						<option value=''>Select {label}</option>
 						{getOptions(field).map((option) => (
@@ -72,18 +72,18 @@ const QuestionnaireSection: React.FC<QuestionnaireSectionProps> = ({ title, icon
 
 		if (field === 'weight') {
 			return (
-				<div key={field} className='mb-4'>
-					<label className='block text-sm font-medium mb-1'>{label}</label>
+				<div key={field} className='mb-6'>
+					<label className='block text-sm font-medium mb-2 text-gray-300'>{label}</label>
 					<div className='relative'>
 						<input
 							type='text'
 							name={field}
 							value={userData[field] as string}
 							onChange={handleWeightChange}
-							className='w-full bg-gray-700 text-white rounded px-3 py-2 pr-12'
+							className='w-full bg-gray-700 text-white rounded-lg px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300'
 							placeholder='Enter weight'
 						/>
-						<span className='absolute right-3 top-2 text-gray-400'>lbs</span>
+						<span className='absolute right-4 top-3 text-gray-400'>lbs</span>
 					</div>
 				</div>
 			);
@@ -92,19 +92,19 @@ const QuestionnaireSection: React.FC<QuestionnaireSectionProps> = ({ title, icon
 		if (field === 'height') {
 			const height = userData[field] as { feet: string; inches: string };
 			return (
-				<div key={field} className='mb-4'>
-					<label className='block text-sm font-medium mb-1'>{label}</label>
-					<div className='flex space-x-2'>
+				<div key={field} className='mb-6'>
+					<label className='block text-sm font-medium mb-2 text-gray-300'>{label}</label>
+					<div className='flex space-x-4'>
 						<div className='relative w-1/2'>
 							<input
 								type='text'
 								name={`${field}-feet`}
 								value={height.feet}
 								onChange={(e) => handleHeightChange('feet', e)}
-								className='w-full bg-gray-700 text-white rounded px-3 py-2 pr-8'
+								className='w-full bg-gray-700 text-white rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300'
 								placeholder='Feet'
 							/>
-							<span className='absolute right-3 top-2 text-gray-400'>ft</span>
+							<span className='absolute right-4 top-3 text-gray-400'>ft</span>
 						</div>
 						<div className='relative w-1/2'>
 							<input
@@ -112,10 +112,10 @@ const QuestionnaireSection: React.FC<QuestionnaireSectionProps> = ({ title, icon
 								name={`${field}-inches`}
 								value={height.inches}
 								onChange={(e) => handleHeightChange('inches', e)}
-								className='w-full bg-gray-700 text-white rounded px-3 py-2 pr-8'
+								className='w-full bg-gray-700 text-white rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300'
 								placeholder='Inches'
 							/>
-							<span className='absolute right-3 top-2 text-gray-400'>in</span>
+							<span className='absolute right-4 top-3 text-gray-400'>in</span>
 						</div>
 					</div>
 				</div>
@@ -123,14 +123,14 @@ const QuestionnaireSection: React.FC<QuestionnaireSectionProps> = ({ title, icon
 		}
 
 		return (
-			<div key={field} className='mb-4'>
-				<label className='block text-sm font-medium mb-1'>{label}</label>
+			<div key={field} className='mb-6'>
+				<label className='block text-sm font-medium mb-2 text-gray-300'>{label}</label>
 				<input
 					type={field === 'age' || field === 'workoutDays' || field === 'mealsPerDay' ? 'number' : 'text'}
 					name={field}
 					value={userData[field] as string}
 					onChange={handleChange}
-					className='w-full bg-gray-700 text-white rounded px-3 py-2'
+					className='w-full bg-gray-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300'
 					placeholder={`Enter ${label}`}
 				/>
 			</div>
@@ -138,8 +138,8 @@ const QuestionnaireSection: React.FC<QuestionnaireSectionProps> = ({ title, icon
 	};
 
 	return (
-		<div className='bg-gray-800 p-6 rounded-lg'>
-			<h2 className='text-2xl font-bold mb-4 flex items-center'>
+		<div className='bg-gray-800 p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl'>
+			<h2 className='text-2xl font-bold mb-6 flex items-center text-red-500'>
 				{icon} {title}
 			</h2>
 			{fields.map(renderField)}

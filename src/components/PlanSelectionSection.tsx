@@ -10,16 +10,18 @@ interface PlanSelectionSectionProps {
 
 const PlanSelectionSection: React.FC<PlanSelectionSectionProps> = ({ title, icon, options, selectedOption, onSelect }) => {
 	return (
-		<div className='bg-gray-800 p-6 rounded-lg'>
-			<h2 className='text-2xl font-bold mb-4 flex items-center'>
+		<div className='bg-gray-800 p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl'>
+			<h2 className='text-2xl font-bold mb-6 flex items-center text-red-500'>
 				{icon} {title}
 			</h2>
 			<div className='space-y-4'>
 				{options.map((option) => (
 					<button
 						key={option}
-						className={`w-full py-3 px-4 rounded-lg text-left transition-colors duration-200 ${
-							selectedOption === option ? 'bg-red-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+						className={`w-full py-4 px-6 rounded-lg text-left transition-all duration-300 ${
+							selectedOption === option
+								? 'bg-red-600 text-white shadow-md transform scale-105'
+								: 'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:shadow-md'
 						}`}
 						onClick={() => onSelect(option)}
 					>
